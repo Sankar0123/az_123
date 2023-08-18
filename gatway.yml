@@ -1,0 +1,26 @@
+name: Python App Gateway
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your main branch name
+
+jobs:
+  run_python_code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Replace 'x' with the desired Python version (e.g., '3.8', '3.9')
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt  # If you have any dependencies, list them in a requirements.txt file
+
+    - name: Run Python script
+      run: python my_script.py  # Replace 'my_script.py' with the actual filename if it differs
+

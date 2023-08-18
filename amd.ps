@@ -1,0 +1,6 @@
+# Get information about the CPU using WMI
+$cpuInfo = Get-WmiObject -Class Win32_Processor
+
+# Display CPU information
+Write-Host "CPU Manufacturer: $($cpuInfo.Manufacturer)"
+Write-Host "CPU Name: $($cpuInfo.Name)"
